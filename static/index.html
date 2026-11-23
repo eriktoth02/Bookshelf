@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookshelf</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Bookshelf</h1>
+    </header>
+
+    <form id="add-form" class="card add-form" novalidate>
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" name="title" required maxlength="300" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="author">Author</label>
+        <input id="author" name="author" required maxlength="200" autocomplete="off">
+      </div>
+      <div class="field field-status">
+        <label for="status">Status</label>
+        <select id="status" name="status"></select>
+      </div>
+      <button type="submit" id="add-button">Add book</button>
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+    </form>
+
+    <nav id="filters" class="filters" aria-label="Filter by status"></nav>
+
+    <section id="list-region" aria-live="polite" aria-busy="true">
+      <p class="placeholder">Loading your shelf…</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" hidden>
+    <span id="toast-text"></span>
+    <button type="button" id="toast-action" hidden></button>
+  </div>
+</body>
+</html>
